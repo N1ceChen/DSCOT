@@ -29,7 +29,7 @@ if __name__ == '__main__':
     WEIGHT_DECAY = 0.001  # lambda
     SEED = None  # random seed
     nb_comps = 5
-    VERBOSE_TIME = 1 
+    VERBOSE_TIME = 5 
     BATCH_SIZE = 1
     if im_ == 'PaviaU':
         #img, gt = img[150:350, 100:200, :], gt[150:350, 100:200]
@@ -37,40 +37,21 @@ if __name__ == '__main__':
         EPOCH = 100
         LEARNING_RATE = 0.0002
 
-        REG_LATENT = 100   # alpha
-        WEIGHT_DECAY = 0.1    # lambda
-
-        #REG_LATENT = 100   # alpha
-        #WEIGHT_DECAY = 0.1    # lambda
+        REG_LATENT = 100   # lambda
+        WEIGHT_DECAY = 0.1    # rho
 
     if im_ == 'Indian_pines_corrected':
         #img, gt = img[30:115, 24:94, :], gt[30:115, 24:94]
         SEED = 133
-        NEIGHBORING_SIZE = 13
         EPOCH = 100
         LEARNING_RATE = 0.0002
-        REG_LATENT = 100.  # alpha
-        WEIGHT_DECAY = 0.01  # lambda
-    if im_ == 'Salinas_corrected':
-        #img, gt = img[0:140, 50:200, :], gt[0:140, 50:200]
-        SEED = 123
+        REG_LATENT = 100.  # lambda
+        WEIGHT_DECAY = 0.01  # rho
     if im_ == 'SalinasA_corrected':
-        SEED = 10
-        NEIGHBORING_SIZE = 9
         EPOCH = 100
         LEARNING_RATE = 0.0002
-        REG_LATENT = 100.  # alpha
-        WEIGHT_DECAY = 0.01  # lambda
-    if im_ == 'Houston':
-        #img, gt = img[:, 0:680, :], gt[:, 0:680]
-        SEED = 133
-        NEIGHBORING_SIZE = 9
-        EPOCH = 50
-        LEARNING_RATE = 0.0002
-        REG_LAP = 0.001  # beta
-        REG_LATENT = 100.  # alpha
-        WEIGHT_DECAY = 0.001  # lambda
-        VERBOSE_TIME = 10
+        REG_LATENT = 100.  # lambda
+        WEIGHT_DECAY = 0.01  # rho
 
 
     if torch.cuda.is_available():
